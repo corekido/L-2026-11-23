@@ -1,0 +1,47 @@
+% ==========================================
+% Borders & Geometry
+% ==========================================
+\usepackage[margin=2.2cm]{geometry}
+\usepackage[hang,flushmargin]{footmisc}
+
+% ==========================================
+% Equations & Figures
+% ==========================================
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{nccmath}
+\usepackage{physics}
+\usepackage[separate-uncertainty=true]{siunitx}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% ==========================================
+% 3. Better Tables & Code Listing
+% ==========================================
+\usepackage{booktabs}
+
+% ==========================================
+% 4. Text Related
+% ==========================================
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{fontspec}
+\usepackage{xepersian}
+
+% ==========================================
+% 5. Font Settings
+% ==========================================
+
+\settextfont{XBNiloofar.ttf}[
+    Path = ./fonts/ ,
+    BoldFont = XBNiloofarbd.ttf]
+\setmathrm{latinmodern-math.otf}[Path = ./fonts/]
+\onehalfspacing
+\setlist[itemize,1]{label=\(\bullet\)} % تنظیمات بولت پوینت‌های لیست
+
+% ==========================================
+% 6. Custom Commands
+% ==========================================
+
+\newcommand{\khat}{\noindent\rule{\textwidth}{0.5pt}}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
