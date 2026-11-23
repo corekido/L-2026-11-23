@@ -1,0 +1,56 @@
+
+
+\begin{equation*}
+    \text{شکل موضعی}: \quad
+    \begin{cases}
+        y = Y(x) \\
+        x = X(y)
+    \end{cases}
+    \quad \text{یا} \quad
+    u(x,y) = c
+\end{equation*}
+
+\begin{equation*}
+    \frac{\partial \vb{r}}{\partial v} = \abs{\frac{\partial \vb{r}}{\partial v}} \eu{v}
+\end{equation*}
+
+\begin{equation*}
+    \grad{u} \vdot \frac{\partial \vb{r}}{\partial v} = \frac{\partial u}{\partial v} = 0
+\end{equation*}
+
+\begin{equation*}
+    \grad{u}\vdot \frac{\partial \vb{r}}{\partial v} = 0 \qquad
+    \grad{v}\vdot \frac{\partial \vb{r}}{\partial u} = 0
+\end{equation*}
+
+\begin{equation*}
+    \frac{\partial \vb{r}}{\partial v} \vdot \frac{\partial \vb{r}}{\partial u} =
+    \abs{\frac{\partial \vb{r}}{\partial v}} \abs{\frac{\partial \vb{r}}{\partial u}}\cos \theta
+    \qquad
+    \grad{u}\vdot\grad{v} = \abs{\grad{u}}\abs{\grad{v}} \cos \theta
+\end{equation*}
+
+\begin{equation*}
+    \begin{aligned}
+        dl^2 &= dx^2 + dy^2 = d\vb{r}\cdot d\vb{r} =
+        \left(\frac{\partial \vb{r}}{\partial u}\,du + \frac{\partial \vb{r}}{\partial v}\,dv\right)^2
+        \\
+                                                  & =\left(\frac{\partial \vb{r}}{\partial u}\right)^2 du^2 +
+        2\,\frac{\partial \vb{r}}{\partial u}\cdot\frac{\partial \vb{r}}{\partial v}\,du\,dv +
+        \left(\frac{\partial \vb{r}}{\partial v}\right)^2 dv^2
+        \\
+        & = g_{uu}\,du^2 + 2g_{uv}\,du\,dv + g_{vv}\,dv^2 = g_{ij}\,dq_i\,dq_j \qquad \begin{cases} q_1 = u \\ q_2 = v \end{cases}
+    \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+    dl^2 = d\rho^2 + \rho^2\,d\theta^2, \quad \frac{\partial \vb{r}}{\partial \rho}\cdot\frac{\partial \vb{r}}{\partial \theta} = 0, \quad g_{\rho\theta} = 0, \quad g_{\rho\rho} = 1, \quad g_{\theta\theta} = \rho^2
+\end{equation*}
+
+\begin{equation*}
+    Q_i = \vb{F}\cdot\frac{\partial \vb{r}}{\partial q_i} = \left|\frac{\partial \vb{r}}{\partial q_i}\right| \hat{e}_{q_i}\cdot\vb{F}
+\end{equation*}
+
+\begin{equation*}
+    T = \frac{1}{2}m\,\vb{v}\cdot\vb{v} = \frac{1}{2}m\,\frac{d\vb{r}}{dt}\cdot\frac{d\vb{r}}{dt} = \frac{1}{2}m\,g_{ij}\,\frac{dq_i}{dt}\frac{dq_j}{dt}
+\end{equation*}
