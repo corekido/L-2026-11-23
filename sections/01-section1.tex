@@ -1,5 +1,7 @@
 
-
+\noindent جرم ذره‌ای \(m\)
+در صفحه \(xy\)
+روی یک خم حرکت می‌کند.
 \begin{equation*}
     \text{شکل موضعی}: \quad
     \begin{cases}
@@ -9,20 +11,31 @@
     \quad \text{یا} \quad
     u(x,y) = c
 \end{equation*}
+\(c\) قید است که حرکت ذره را بر روی مسیر مشخصی تعین می‌کند و
+\(v\) پارامتری است که به طور یکتا، مکان ذره را روی \(u\) مشخص می‌کند.
 
+\khat
 \begin{equation*}
-    \frac{\partial \vb{r}}{\partial v} = \abs{\frac{\partial \vb{r}}{\partial v}} \eu{v}
+    \frac{\partial \vb{r}}{\partial v} = \abs{\frac{\partial \vb{r}}{\partial v}} \eu{v},
+    \qquad\qquad \eu{v} \quad :\text{جهت افزایش \(v\)}
 \end{equation*}
-
+مشتق بالا جهت افزایش \(v\) را به ما نشان می‌دهد.
+گرادیان هم جهت افزایش را به ما نشان می‌دهد، پس:
 \begin{equation*}
-    \grad{u} \vdot \frac{\partial \vb{r}}{\partial v} = \frac{\partial u}{\partial v} = 0
+    \grad{u} \vdot \frac{\partial \vb{r}}{\partial v} =
+    \pdv{u}{x}\pdv{x}{v} + \pdv{u}{y}\pdv{y}{v} + \pdv{u}{z}\pdv{z}{v} =
+    \frac{\partial u}{\partial v} = 0 \implies \grad{u} \perp \pdv{\vb{r}}{v}
 \end{equation*}
-
+آهنگ تغییرات \(u\) بر حسب \(v\) صفر است و از یکدیگر مستقل هستند.
+البته این نتیجه، در تعریف $v$ خود نهفته بود.
+اگر بتوانیم یک خم ثابت \(v\) را پیدا کنیم، میتوان نشان داد که:
 \begin{equation*}
     \grad{u}\vdot \frac{\partial \vb{r}}{\partial v} = 0 \qquad
     \grad{v}\vdot \frac{\partial \vb{r}}{\partial u} = 0
 \end{equation*}
-
+\\
+ولی \(\pdv{r}{u}\)
+لزومی ندارد که به \(\pdv{r}{v}\) عمود باشد؛ میتوانیم آن را حساب کنیم:
 \begin{equation*}
     \frac{\partial \vb{r}}{\partial v} \vdot \frac{\partial \vb{r}}{\partial u} =
     \abs{\frac{\partial \vb{r}}{\partial v}} \abs{\frac{\partial \vb{r}}{\partial u}}\cos \theta
@@ -30,27 +43,80 @@
     \grad{u}\vdot\grad{v} = \abs{\grad{u}}\abs{\grad{v}} \cos \theta
 \end{equation*}
 
+\khat
+
+\noindent ما برای یک نقطه بررسی کردیم، حالا برای کل خم بررسی می‌کنیم:
 \begin{equation*}
     \begin{aligned}
-        dl^2 &= dx^2 + dy^2 = d\vb{r}\cdot d\vb{r} =
+        dl^2 & = dx^2 + dy^2 = d\vb{r}\cdot d\vb{r} =
         \left(\frac{\partial \vb{r}}{\partial u}\,du + \frac{\partial \vb{r}}{\partial v}\,dv\right)^2
         \\
-                                                  & =\left(\frac{\partial \vb{r}}{\partial u}\right)^2 du^2 +
+             & =\left(\frac{\partial \vb{r}}{\partial u}\right)^2 du^2 +
         2\,\frac{\partial \vb{r}}{\partial u}\cdot\frac{\partial \vb{r}}{\partial v}\,du\,dv +
         \left(\frac{\partial \vb{r}}{\partial v}\right)^2 dv^2
         \\
-        & = g_{uu}\,du^2 + 2g_{uv}\,du\,dv + g_{vv}\,dv^2 = g_{ij}\,dq_i\,dq_j \qquad \begin{cases} q_1 = u \\ q_2 = v \end{cases}
+             & = g_{uu}\,du^2 + 2g_{uv}\,du\,dv + g_{vv}\,dv^2 = g_{ij}\,dq_i\,dq_j \qquad \begin{cases} q_1 = u \\ q_2 = v \end{cases}
     \end{aligned}
 \end{equation*}
-
+\begin{equation*}
+    g_{ij} = \pdv{\vb{r}}{q_i} \vdot \pdv{\vb{r}}{q_j} \hspace{5cm}\text{\(g_{ij}\) را تانسور متریک می‌گویند.}
+\end{equation*}
+این مسیر ها از دید کسی که دکارتی می‌بیند، خم هستند ولی مجبور نیستیم که حتما از طول اقلیدسی استفاده کنیم.
+\\
+مثال برای دستگاه قطبی:
 \begin{equation*}
     dl^2 = d\rho^2 + \rho^2\,d\theta^2, \quad \frac{\partial \vb{r}}{\partial \rho}\cdot\frac{\partial \vb{r}}{\partial \theta} = 0, \quad g_{\rho\theta} = 0, \quad g_{\rho\rho} = 1, \quad g_{\theta\theta} = \rho^2
 \end{equation*}
 
+یادآوری نیروی تعمیم یافته:
 \begin{equation*}
-    Q_i = \vb{F}\cdot\frac{\partial \vb{r}}{\partial q_i} = \left|\frac{\partial \vb{r}}{\partial q_i}\right| \hat{e}_{q_i}\cdot\vb{F}
+    Q_i = \vb{f}\cdot\frac{\partial \vb{r}}{\partial q_i} = \left|\frac{\partial \vb{r}}{\partial q_i}\right| \hat{e}_{q_i}\cdot\vb{f}
 \end{equation*}
 
+به عنوان مثال:
 \begin{equation*}
-    T = \frac{1}{2}m\,\vb{v}\cdot\vb{v} = \frac{1}{2}m\,\frac{d\vb{r}}{dt}\cdot\frac{d\vb{r}}{dt} = \frac{1}{2}m\,g_{ij}\,\frac{dq_i}{dt}\frac{dq_j}{dt}
+    Q_\rho = \vb{f} \vdot \eu{\rho} \,, \qquad Q_\theta = r\, \vb{f} \vdot \eu{\theta}
 \end{equation*}
+\begin{equation*}
+    T = \frac{1}{2}m\,\vb{v}\cdot\vb{v} =
+    \frac{1}{2}m\,\frac{d\vb{r}}{dt}\cdot\frac{d\vb{r}}{dt} =
+    \frac{1}{2}m\,g_{ij}\,\frac{dq_i}{dt}\frac{dq_j}{dt} =
+    \frac{1}{2}m\,(\dot{\rho}^2 + \rho^2\dot{\theta}^2)
+\end{equation*}
+
+\khat
+
+\noindent برای خم بدون اصطکاک، معادلات ذره را استخراج کنید. در مرحله دوم اصطکاک را نیز در نظر بگیرید.
+
+\begin{equation*}
+    f =\mu N, \quad \mu = 0 \implies  T = \frac{m}{2}\, g_{ij} \dv{q_i}{t} \dv{q_j}{t}
+    = \frac{m}{2} \left( g_{uu} \dot{u}^2 + 2 g_{uv} \dot{u}\dot{v} + g_{vv} \dot{v}^2 \right)
+\end{equation*}
+\begin{equation*}
+    T = \frac{m}{2}\, g_{vv} \dot{v}^2, \qquad
+    g_{vv}(c, v)\, \dot{v}^2 = \frac{2T}{m}.
+\end{equation*}
+\begin{equation*}
+    \frac{1}{2} m \rho^2 \dot{\theta}^2 \Big|_{\rho = R} = T \implies \dot{\theta} = \pm \sqrt{\frac{2T}{mR^2}}
+\end{equation*}
+
+چه نیرویی باعث حرکت ذره روی مسیر و حرکت روی آن می‌شود؟
+\begin{equation*}
+    m \dv{t} \left( g_{uv} \dot{u} + g_{vv} \dot{v} \right) - \frac{m}{2} \pdv{T}{v} = Q_v
+\end{equation*}
+\begin{equation*}
+    u = c \implies Q_v = m \dv{t} \left( g_{vv} \dot{v} \right) - \frac{m}{2} \pdv{g_{uv}}{v} \dot{v}^2
+\end{equation*}
+
+به دلیل اینکه اصطکاک نداریم $Q_v$ باید صفر باشد.
+\begin{equation*}
+    Q_u = m \dv{t} \left( g_{uu} \dot{u} + g_{uv} \dot{v} \right) - \pdv{T}{u} = m \dv{t} \left( g_{uv} \dot{v} \right) - m \pdv{g_{vv}}{u} \dot{v}^2
+    \qquad :\text{نیروی عمود بر سطح}
+\end{equation*}
+
+\khat
+
+\noindent تمرین:
+$Q_v$ و $Q_u$ را روی دایره در دستگاه قطبی حل کنید.
+\\
+تمرین: برای خم بیضی نیز محاسبه کنید.
